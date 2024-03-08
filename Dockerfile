@@ -46,9 +46,9 @@ RUN set -ex;\
     mkdir -vp "$vscode_dir";\
     tar --no-same-owner -xz --strip-components=1 -C "$vscode_dir" -f "/tmp/${archive}";\
     $vscode_dir/bin/code-server --version;\
-    $vscode_dir/bin/code-server --install-extension ms-python.python;\
+#    $vscode_dir/bin/code-server --install-extension ms-python.python;\
     $vscode_dir/bin/code-server --install-extension ms-vscode.cpptools;\
-    $vscode_dir/bin/code-server --install-extension ms-vscode.cmake-tools;\
+#    $vscode_dir/bin/code-server --install-extension ms-vscode.cmake-tools;\
     $vscode_dir/bin/code-server --install-extension golang.go;\
     $vscode_dir/bin/code-server --install-extension github.copilot;\
     $vscode_dir/bin/code-server --install-extension github.copilot-chat;\
