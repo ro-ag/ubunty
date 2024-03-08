@@ -36,6 +36,8 @@ RUN useradd -m duck && \
 
 WORKDIR /tmp
 
+USER duck
+
 RUN set -ex;\
     VSCODE_VERSION=2ccd690cbff1569e4a83d7c43d45101f817401dc;\
     vscode_dir="~/.vscode-server/bin/${VSCODE_VERSION}";\
@@ -55,9 +57,6 @@ RUN set -ex;\
     $vscode_dir/bin/code-server --install-extension twxs.cmake;\
     rm -rd "$vscode_dir";\
     rm "/tmp/${archive}"
-
-
-USER duck
 
 # Set the work directory
 WORKDIR /home/duck
