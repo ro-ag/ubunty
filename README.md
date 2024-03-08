@@ -1,0 +1,2 @@
+# ubunty
+preinstall vscode extensions
