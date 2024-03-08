@@ -51,7 +51,7 @@ RUN set -ex;\
 #    $vscode_dir/bin/code-server --install-extension ms-vscode.cmake-tools;\
     $vscode_dir/bin/code-server --install-extension golang.go;\
     $vscode_dir/bin/code-server --install-extension github.copilot;\
-    $vscode_dir/bin/code-server --install-extension github.copilot-chat;\
+#    $vscode_dir/bin/code-server --install-extension github.copilot-chat;\
     $vscode_dir/bin/code-server --install-extension visualstudioexptteam.vscodeintellicode;\
     $vscode_dir/bin/code-server --install-extension visualstudioexptteam.intellicode-api-usage-examples;\
     $vscode_dir/bin/code-server --install-extension twxs.cmake;\
