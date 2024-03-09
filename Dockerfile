@@ -38,12 +38,12 @@ RUN useradd -ms /bin/bash dev-docker && \
 
 USER dev-docker
 
+WORKDIR /tmp
+
 ENV PATH="/home/dev-docker/.cargo/bin:${PATH}"
 
 # Install Rust and Cargo
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
-USER root
 
 RUN set -ex;\
     VSCODE_VERSION=2ccd690cbff1569e4a83d7c43d45101f817401dc;\
@@ -62,7 +62,6 @@ RUN set -ex;\
     rm -rd "$vscode_dir";\
     rm "/tmp/${archive}"
 
-user dev-docker
 
 # Set the work directory
 WORKDIR /home/dev-docker
