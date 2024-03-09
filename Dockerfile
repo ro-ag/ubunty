@@ -66,6 +66,13 @@ RUN set -ex;\
 # Set the work directory
 WORKDIR /home/dev-docker
 
+# since vscode keeps hanging when some extensions are install like copilot-chat after you open, vscode remote.
+# to solve,  closing vscode is not enough, you need to kill node,sleep and  vsce-sign, here is the small script.
+
+RUN set -ex;\
+    echo 'pkill -9 vsce-sign && pkill -9 node && pkill -9 sleep' >> code_kill.sh;\
+    chmod +x code_kill.sh
+
 SHELL ["/bin/bash", "-c"]
 
 CMD ["/bin/bash"]
